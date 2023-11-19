@@ -1,0 +1,10 @@
+SELECT
+    cl.nome AS nome_cliente,
+    ca.cor AS cor_casa,
+    ba.nome AS nome_bairro,
+    car.modelo AS modelo_carro
+FROM
+    cliente cl
+JOIN casa ca ON cl.id_cliente = ca.fk_cliente
+JOIN bairro ba ON ca.fk_bairro = ba.id_bairro
+LEFT JOIN carro car ON cl.id_cliente = car.fk_cliente;
